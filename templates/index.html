@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake New's Prediction System</title>
+    <style>
+        body{
+            background-color: black;
+            color: wheat;
+        }
+        .A{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .C{
+            text-align: center;
+            padding:25px;
+            width:50%;
+            margin:30px;
+        }
+        .B{
+            cursor:pointer;
+            text-align: center;
+        }
+        .D{
+            cursor:pointer;
+            background-color: aquamarine;
+            text-align: center;
+            padding:25px;
+            width:55%;
+            margin:30px;
+        }
+        input{
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="B">Predict Whether the news is Real/Fake</h1>
+    <form action="{{ url_for('predict')}}" method="post" class="A">
+        <input type="text" required="required" name="a" placeholder="TITLE OF THE NEWS" class="C"/>
+        <input type="text" required="required" name="b" placeholder="AUTHOR OF THE NEWS" class="C"/>
+        <button type="submit" class="D">Predict</button>
+    </form>
+    <h4 class="B">{{ predicted_text }}</h4>
+</body>
+</html>
